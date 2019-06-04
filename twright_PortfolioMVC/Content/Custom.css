@@ -1,0 +1,28 @@
+﻿.text-bold {
+    font-weight: bolder;
+}
+
+.basicInput{
+    color: black;
+}
+
+
+.minWidth {
+    min-width:100%;
+}
+
+.button1 {
+    width: 250px;
+}
+
+.button2 {
+    width: 50%;
+}
+
+.button3 {
+    width: 100%;
+}
+
+.contactMargin {
+    margin-bottom: 30px;
+}

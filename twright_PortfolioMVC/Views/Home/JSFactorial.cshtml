@@ -1,0 +1,116 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "JSFactorial";
+}
+
+
+
+<!--This is where I will most likely use the BS grid system to layout my exercise-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<div class="container">
+    <!--Title of page-->
+        <div class="font-weight-bold text-center">
+            <h1>JS Factorial</h1>
+        </div>
+  
+
+
+    <div class="row">
+        <div class="col-md-12 text-center text-center text-bold">
+            This exercise will calculate the Factorial of any number under 171
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class=" col-md-6">
+            <div class="row">
+                <div class="col-md-6">Enter a number:</div>
+                <div class="col-md-6">
+                    <input id="input" type="number" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="btnCalc" class="btn btn-primary">Calculate</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="btnClear" class="btn btn-success">Clear</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class=" col-md-6">
+            <div class="row">
+                <div class="col-md-12 text-center text-center text-bold">Output</div>
+            </div>
+            <div class="row">
+                <p class="text-bold" id="output"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    @section scripts{
+        <script>
+            $("#btnClear").click(function () {
+                $("#input").val("");
+                $("#output").text("");
+            });
+
+            $("#btnCalc").click(function () {
+                //Step 1: Get the user data
+                var input = Number($("input").val());
+
+
+                //Step 2: Do something with it
+                var output = input;
+
+                if (input > 0) {
+                    for (var loop = input - 1; loop > 1; loop--) {
+                        output *= loop;
+                    }
+                }
+                else if (input == 0) {
+                    output = 1;
+                }
+                else {
+                    output = "undefined";
+                }
+
+                //Step 3: Inform the user
+                $("#output").text("The factorial of " + input + " is " + output);
+
+            });
+
+
+        </script>
+
+    }

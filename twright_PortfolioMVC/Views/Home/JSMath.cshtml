@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "JSDemo";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<!--Layout a BS grid that allows me to organize the controls required for exercise 1-->
+
+<style>
+    .btn-wide {
+        width: 100%;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 h2 text-center">
+            <strong>JavaScript Exercise 1: Learn Math...</strong>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="col-md-6">
+
+        <div class="row">
+            <div class="col-md-3">Enter Number 1:</div>
+            <div class="col-md-6">
+                <input type="number" id="number1" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">Enter Number 2:</div>
+            <div class="col-md-6">
+                <input type="number" id="number2" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">Enter Number 3:</div>
+            <div class="col-md-6">
+                <input type="number" id="number3" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">Enter Number 4:</div>
+            <div class="col-md-6">
+                <input type="number" id="number4" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">Enter Number 5:</div>
+            <div class="col-md-6">
+                <input type="number" id="number5" />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-3">
+                <button id="btnMath" class="btn-primary btn-wide">Click Me</button>
+            </div>
+
+            <div class="col-md-offset-1 col-md-3">
+                <button id="btnMath2" class="btn-danger btn-wide">Click Me</button>
+            </div>
+
+            <div class="col-md-offset-1 col-md-3">
+                <button id="btnClear" class="btn-primary btn-wide">Clear</button>
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="row">
+            <p id="sum"></p>
+        </div>
+    </div>
+
+
+</div>
+
+
+@section scripts{
+    <!--After all of my HTML code I can add my <script> tags for JS/jQuery-->
+    <script>
+        //Step 1: Acquire the user input
+        $("#btnMath").click(function () {
+            // I want to grab the value inside input id=number1
+            var number1 = Number($("#number1").val());
+            var number2 = Number($("#number2").val());
+            var number3 = Number($("#number3").val());
+            var number4 = Number($("#number4").val());
+            var number5 = Number($("#number5").val());
+
+
+
+
+            //Step 2: Do something with it
+            var sum = number1 + number2 + number3 + number4 + number5;
+            var max = Math.max(number1, number2, number3, number4, number5);
+
+
+            //Step 3: Out the results to the screen
+            $("#sum").text("the sum of your input is tww:" + sum);
+            $("#max").text("the largest number of your input is:" + max);
+         
+
+        });
+
+        //$("#btnMath2").click(function () {
+        //    DoMath();
+        //});
+
+        $("#btnClear").click(function () {
+            $("#largest").text("");
+            $("#sum").text("");
+            $("#number1, #number2, #number3, #number4, #number5").val("");
+
+        });
+
+
+        //function DoMath() {
+        //    //Step 1: Acquire the user input
+
+        //    //var number1 = Number($("#number1").val());
+        //    var strNumber1 = $("#number1").val();
+        //    var number1 = Number(strNumber1);
+
+        //    //var number2 = Number($("#number2").val());
+        //    var strNumber2 = $("#number2").val();
+        //    var number2 = Number(strNumber2);
+
+        //    var number3 = Number($("#number3").val());
+        //    var number4 = Number($("#number4").val());
+        //    var number5 = Number($("#number5").val());
+
+        //    //Step 2: Do something with it
+        //    var sum = number1 + number2 + number3 + number4 + number5;
+        //    //var sum2 = strNumber1 + strNumber2
+
+        //    //Step 3: Out the results to the screen
+        //    $("#sum").text("The sum of your input is tw: " + sum);
+        //    //$("#sum2").text("The sum of your string input is: " + sum2);
+
+        //}
+
+
+
+
+    </script>
+}

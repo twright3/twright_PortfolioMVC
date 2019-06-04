@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Fizz Buzz";
+}
+
+<div class="containter">
+    <div class="col-md-12 h2 text-center">
+        <u><strong>Fizz Buzz</strong></u>
+    </div>
+
+    <hr />
+
+
+    <div class="row">
+        @*The Input half*@
+        <div class=" col-md-6">
+            <div class="row">
+                <div class="col-md-3"><strong>Enter Number 1:</strong></div>
+                <div class="col-md-6">
+                    <input id="input1" type="number" />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-3"><strong>Enter Number 2:</strong></div>
+                <div class="col-md-6">
+                    <input id="input2" type="number" />
+                </div>
+            </div>
+
+            <br />
+
+            @*Buttons*@
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="btnCalc" class="btn btn-danger">Calculate</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="btnClear" class="btn btn-success">Clear</button>
+                </div>
+            </div>
+
+        </div>
+
+        @*The Output*@
+        <div class=" col-md-6">
+            <div class="row">
+                <div class="col-md-12 text-center text-center text-bold h4"><strong>Output</strong></div>
+            </div>
+            <div class="row">
+                <p class="text-bold" id="output"></p>
+
+            </div>
+        </div>
+    </div>
+
+            @section scripts{
+                <!--Scripts here for above code-->
+
+                <script>
+
+                    $("#btnClear").click(function () {
+                        $("#input1").val("");
+                        $("#input2").val("");
+                        $("#output").text("");
+
+                    });
+
+
+                    //Step 1: Acquire the user input
+                    $("#btnCalc").click(function () {
+                        var input1 = Number($("#input1").val());
+                        var input2 = Number($("#input2").val())
+
+                        var output = "";
+
+                        //Step 2: Do something with it
+                        for (var loop = 1; loop <= 100; loop++) {
+                            var fizzCondition = loop % input1 == 0 ? true : false;
+                            var buzzCondition = loop % input2 == 0 ? true : false;
+
+
+                            if (buzzCondition && buzzCondition) {
+                                output += "Fizz-Buzz, ";
+
+                            }
+                            else if (fizzCondition) {
+                                output += "Fizz, ";
+                            }
+
+                            else if (buzzCondition) {
+                                output += "Buzz, ";
+                            }
+
+                            else {
+                                output += loop + ", ";
+                            }
+
+                        }
+
+                        //Lop off the trailing comma
+                        output = output.substr(0, output.length - 2);
+
+                        //Step 3: Out the results to the screen
+                        $("#output").text(output);
+
+                    });
+
+                      
+
+
+
+
+
+                    
+
+
+
+
+                </script>
+
+                }
