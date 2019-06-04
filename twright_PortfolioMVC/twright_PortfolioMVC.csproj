@@ -214,8 +214,9 @@
     <Content Include="webfonts\fa-solid-900.ttf" />
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
-    <Content Include="img\Travis Wright Resume.pdf" />
+    <Content Include="img\Travis Wright ResumeOld.pdf" />
     <Content Include="private.config" />
+    <Content Include="img\Travis Wright Resume.pdf" />
     <None Include="Properties\PublishProfiles\twright-Portfolio - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\twright-Portfolio - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
