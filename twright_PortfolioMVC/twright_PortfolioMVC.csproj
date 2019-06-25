@@ -140,6 +140,7 @@
     <Content Include="faviconOld.ico" />
     <Content Include="img\Browser Logo lg.png" />
     <Content Include="img\Browser Logo.jpg" />
+    <Content Include="img\Financial-v1_API.png" />
     <Content Include="img\portfolio\thumbnails\Blog-v1.jpg" />
     <Content Include="img\portfolio\thumbnails\BugTracker-v1.jpg" />
     <Content Include="img\portfolio\thumbnails\Coming_Soon_green.jpg" />
